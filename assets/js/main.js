@@ -18,6 +18,23 @@ function convertPokemonToLi(pokemon) {
 
                 <img src="${pokemon.photo}"
                      alt="${pokemon.name}">
+
+                        <!-- Seção de stats -->
+                <div class="stats">
+                    <h4>Stats:</h4>
+                    <ul>
+                        ${pokemon.stats.map(stat => `
+                            <li>${stat.name.toUpperCase()}: ${stat.base_stat}</li>
+                        `).join('')}
+                    </ul>
+                </div>
+                     <!-- Seção de ataques -->
+                <div class="moves">
+                    <h4>Moves:</h4>
+                    <ul>
+                        ${pokemon.moves.map(move => `<li>${move}</li>`).join('')}
+                    </ul>
+                </div>
             </div>
         </li>
     `
